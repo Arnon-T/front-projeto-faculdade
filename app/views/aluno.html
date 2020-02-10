@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+
+
+<div id="top" class="row" ng-init="listarAlunos()">
+	<div class="col-md-3">
+		<h2>Lista de Alunos</h2>
+	</div>
+
+	<div class="col-md-6">
+		<div class="input-group h2">
+			<input name="data[search]" class="form-control" id="search" ng-model="pesquisaAluno" type="text"
+				placeholder="Pesquisar aluno">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit" ng-click="listarAlunos()">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+
+	</div>
+	<div class="col-md-3">
+		<a href="#/aluno-cad" class="btn btn-primary pull-right h2">Novo aluno</a>
+	</div>
+
+</div>
+
+
+</br>
+</br>
+<div id="list" class="row">
+	<div class="table-responsive col-md-12">
+
+		<table class="table col-md-12">
+			<thead>
+				<tr>
+					<th class="col-md-2">ID</th>
+					<th class="col-md-2">Nome</th>
+					<th class="col-md-2">Telefone</th>
+					<th class="col-md-2">E-mail</th>
+					<th class="col-md-2">Endereco</th>
+					<th class="actions">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="aluno in listaAluno">
+
+					<td>{{aluno.id}}</td>
+					<td>{{aluno.nome }}</td>
+					<td>{{aluno.telefone }}</td>
+					<td>{{aluno.email}}</td>
+					<td>{{aluno.endereco}}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaAluno(aluno)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/aluno-editar/{{aluno.id}}">Alterar</a>
+						<a class="btn btn-success btn-xs" type="button" href="#/nota/{{aluno.id}}">Notas</a>
+					</td>
+
+				</tr>
+
+
+			</tbody>
+
+		</table>
+		<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="modalLabel">Excluir Aluno</h4>
+					</div>
+					<div class="modal-body">Deseja realmente excluir este aluno?</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="deleteAluno($index)"
+							data-dismiss="modal">Sim</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

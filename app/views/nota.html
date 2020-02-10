@@ -1,0 +1,240 @@
+<meta charset="utf-8">
+<div id="top" class="row" ng-init="listarNotas()">
+	<div class="col-md-2">
+		<h2>Lista de Notas</h2>
+	</div>
+	<div class="col-md-1" ng-if="habilitaBoletim() == false">
+		<a class="btn btn-primary pull-right h2" href="#/nota-cad/{{aluno.id}}" margin="10px">Nova nota</a>
+	</div>
+	<div class="col-md-1" ng-if="habilitaBoletim() == true">
+		<a class="btn btn-primary pull-right h2" type="button" data-toggle="modal"
+		data-target="#boletim-modal" ng-click="buscaBoletim()">Boletim</a>
+	</div>
+</div>
+
+
+
+
+<div id="list" class="row">
+	<div class="table-responsive col-md-4" margin-right="300px">
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Física' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Química' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Matemática' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Biologia' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Português' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'Geografia' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<table class="table col-md-6">
+			<thead>
+				<tr>
+					<th class="col-md-1">Matéria</th>
+					<th class="col-md-1">Trimestre</th>
+					<th class="col-md-1">Nota</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr ng-repeat="nota in listaNota | filter: 'História' | orderBy: 'trimestre'">
+
+					<td>{{nota.materia.nome}}</td>
+					<td>{{nota.trimestre }}</td>
+					<td>{{nota.nota }}</td>
+					<td class="actions">
+						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
+							data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-warning btn-xs" type="button" href="#/nota-edit/{{nota.id}}">Alterar</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="modalLabel">Excluir Nota</h4>
+					</div>
+					<div class="modal-body">Deseja realmente excluir esta nota?</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="deleteNota($index)"
+							data-dismiss="modal">Sim</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="boletim-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="modalLabel">Gerar Boletim</h4>
+					</div>
+					<div class="modal-body">Após gerar o boletim as notas não poderão ser deletadas!</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" ng-click="exportBoletim()"
+							data-dismiss="modal">Sim</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
