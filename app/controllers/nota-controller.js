@@ -125,7 +125,6 @@ appFaculdade.controller('NotaCtrl', function ($scope, $http, $routeParams) {
         $scope.buscaBoletim();
         console.log('Exportando boletim')
         if ($scope.boletim !== undefined) {
-            console.log('Entrou no if')
             $http({
                 method: 'DELETE',
                 url: 'http://localhost:8080/api/boletim/deletar/' + $scope.aluno.id + "/" + date

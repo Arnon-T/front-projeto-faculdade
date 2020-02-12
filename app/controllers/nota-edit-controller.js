@@ -28,8 +28,6 @@ appFaculdade.controller('NotaEditCtrl', function ($scope, $http, $routeParams) {
         $scope.notaDTO.trimestre = $scope.nota.trimestre;
         $scope.notaDTO.nota = $scope.nota.nota;
 
-
-        console.log($scope.nota)
         $http({
             method: metodo,
             url: url + 'atualizar/',
@@ -37,7 +35,6 @@ appFaculdade.controller('NotaEditCtrl', function ($scope, $http, $routeParams) {
         }).then(function (response) {
             alert("Nota atualizada.")
         }, function (response) {
-            console.log($scope.nota)
             alert('Erro no update.')
         });
     }

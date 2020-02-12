@@ -6,24 +6,26 @@ appFaculdade.controller('AlunoCadastroCtrl', function ($scope, $http) {
 
     $scope.salvarAluno = function () {
         var metodo = 'POST';
-        $http({
-            method: metodo,
-            url: url + 'cadastrar',
-            data: $scope.aluno
-
-        }).then(function (response) {
-            alert("Aluno cadastrado.")
-            $scope.aluno = {};
-        }, function (response) {
-            console.log(response.status)
-            console.log('Erro no cadastro.')
-        });
+        if($scope.validateTelefone()){
+            $http({
+                method: metodo,
+                url: url + 'cadastrar',
+                data: $scope.aluno
+    
+            }).then(function (response) {
+                alert("Aluno cadastrado.")
+                $scope.aluno = {};
+            }, function (response) {
+                console.log(response.status)
+                console.log('Erro no cadastro.')
+            });
+        }        
     }
 
     $scope.listarAlunos = function () {
         var metodo = 'GET';
         var parametro = "";
-        console.log($scope.pesquisaAluno)
+
         if ($scope.pesquisaAluno.length > 0) {
             parametro = "busca/" + $scope.pesquisaAluno;
         }
@@ -72,7 +74,13 @@ appFaculdade.controller('AlunoCadastroCtrl', function ($scope, $http) {
     $scope.validateTelefone = function() {
         if($scope.aluno.telefone.length > 11){
             alert("Digite um telefone válido. (99) 99999-9999")
+            return false;
         }
+        if($scope.aluno.telefone.length < 10){
+            alert("Digite um telefone válido. (99) 99999-9999")
+            return false;
+        }
+        return true;
     }
 
 });
