@@ -1,15 +1,17 @@
 <meta charset="utf-8">
 <h2 class="page-header"><strong>Cadastro de cliente</strong></h2>
 <br>
+<ng-form name="alunoForm" id= "alunoForm">
 <div class="row">
-	<div class="form-group col-md-3">
+	<div class="form-group col-md-3" ng-class="{'has-error': alunoForm.nome.$error.required && submitted}">
 		<label for="campo1">Nome</label>
+		<span ng-class="error" ng-show="alunoForm.nome.$error.required"> *</span>
 		<input type="text" class="form-control" placeholder="Nome" ng-model="aluno.nome">
 	</div>
 
 	<div class="form-group col-md-2">
 		<label for="campo1">Telefone</label>
-		<input type="text" class="form-control" data-mask="(99) 9?9999-9999" clean="true" placeholder="Telefone"
+		<input type="text" class="form-control" clean="true" mask="(99) 9?9999-9999" placeholder="Telefone"
 			ng-model="aluno.telefone">
 	</div>
 
@@ -28,10 +30,11 @@
 		<hr />
 		<div id="actions" class="row" style="margin-bottom:12px">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary" ng-click="salvarAluno()"
+				<button type="submit" class="btn btn-primary" ng-click="salvarAluno().$valid"
 					style="margin-left:12px">Salvar</button>
 				<button type="button" class="btn btn-default" onClick="history.go(-1)">Voltar</button>
 			</div>
 		</div>
 	</form>
 </div>
+</ng-form>

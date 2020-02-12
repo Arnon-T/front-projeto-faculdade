@@ -12,9 +12,6 @@
 	</div>
 </div>
 
-
-
-
 <div id="list" class="row">
 	<div class="table-responsive col-md-4" margin-right="300px">
 
@@ -32,7 +29,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -56,7 +53,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -82,7 +79,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -108,7 +105,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -133,8 +130,8 @@
 				<tr ng-repeat="nota in listaNota | filter: 'Português' | orderBy: 'trimestre'">
 
 					<td>{{nota.materia.nome}}</td>
-					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.trimestre}}</td>
+					<td>{{nota.valorNota}}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -160,7 +157,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -186,7 +183,7 @@
 
 					<td>{{nota.materia.nome}}</td>
 					<td>{{nota.trimestre }}</td>
-					<td>{{nota.nota }}</td>
+					<td>{{nota.valorNota }}</td>
 					<td class="actions">
 						<a class="btn btn-danger btn-xs" type="button" ng-click="buscaNota(nota)" data-toggle="modal"
 							data-target="#delete-modal">Excluir</a>
@@ -209,7 +206,7 @@
 					</div>
 					<div class="modal-body">Deseja realmente excluir esta nota?</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" ng-click="deleteNota($index)"
+						<button type="button" class="btn btn-primary" ng-click="deleteNota()"
 							data-dismiss="modal">Sim</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
 					</div>

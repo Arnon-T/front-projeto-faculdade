@@ -1,1 +1,1 @@
-var appFaculdade = angular.module('appFaculdade',['ngRoute']);
+var appFaculdade = angular.module('appFaculdade',['ngRoute', 'ngMask']);
