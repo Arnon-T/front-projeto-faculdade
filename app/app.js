@@ -1,0 +1,1 @@
+var appFaculdade = angular.module('appFaculdade',['ngRoute', 'ngMask']);

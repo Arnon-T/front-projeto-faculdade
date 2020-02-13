@@ -1,0 +1,40 @@
+<h3 class="page-header">Alterar Aluno</h3>
+<br>
+<div class="row">
+	<div class="form-group col-md-1">
+		<label for="campo1">ID</label>
+		<input type="text" class="form-control" placeholder="ID" ng-model="alunoDetalhe.id" style="width: 50px"
+			readonly>
+	</div>
+	<div class="form-group col-md-3">
+		<label for="campo1">Nome</label>
+		<input type="text" class="form-control" placeholder="Nome" ng-model="alunoDetalhe.nome">
+	</div>
+
+	<div class="form-group col-md-2">
+		<label for="campo1">Telefone</label>
+		<input type="text" class="form-control" data-mask="(99) 9?9999-9999" clean="true" placeholder="Telefone"
+			ng-model="alunoDetalhe.telefone">
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="campo1">E-mail</label>
+		<input type="email" class="form-control" placeholder="example@domain.com" ng-model="alunoDetalhe.email">
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="campo1">Endereço</label>
+		<input type="text" class="form-control" placeholder="Endereço" ng-model="alunoDetalhe.endereco">
+	</div>
+
+	<form>
+		<hr />
+		<div id="actions" class="row" style="margin-bottom:12px">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-primary" ng-click="updateAluno()"
+					style="margin-left:12px">Salvar</button>
+				<button type="button" class="btn btn-default" onClick="history.go(-1)">Voltar</button>
+			</div>
+		</div>
+	</form>
+</div>
